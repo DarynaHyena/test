@@ -12,6 +12,7 @@ body{
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #4d5ae5;
+    text-decoration: none;
 }
 
 .selected-logo{
@@ -24,6 +25,7 @@ body{
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #2e2f42;
+    text-decoration: none;
 }
 
 .link:hover,
@@ -40,6 +42,7 @@ body{
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
+    text-decoration: none;
 }
 
 .address-link:hover,
@@ -108,3 +111,21 @@ body{
     background-color: #FFFFFF;
 }
 
+.footer{
+    background-color: #2e2f42;
+}
+
+.footer-logo{
+    color: #f4f4fd;
+
+}
+
+.footer-par{
+    line-height: 1.5;
+    color: #F4F4FD;
+    letter-spacing: 0.02em;
+}
+
+ul{
+    list-style-type: none;
+}
