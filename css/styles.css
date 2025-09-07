@@ -1,3 +1,4 @@
+/*! Базові стилі */
 * {
   margin: 0;
   padding: 0;
@@ -22,6 +23,9 @@ button {
   cursor: pointer;
   font-family: inherit;
   background-color: transparent;
+  display: block;
+  /* перенесли сюди `display: block;`
+  (це знадобиться в майбутньому) */
 }
 
 img {
@@ -46,23 +50,71 @@ img {
 body {
   font-family: "Roboto", sans-serif;
   color: #434455;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  /* Не вистачало загальних стилів */
   background-color: #ffffff;
 }
 
+.section {
+  padding: 120px 0;
+}
+/* ось загальний клас `section`. Для секцій ми прописуємо
+верхні і нижні падінги як в макеті.
+Центрування і максимальна ширина для секції НЕ потрібні.
+Вона повинна займати всю доступну ширину
+(а от контейнер - обмежений) */
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 156px;
+}
+/* ось загальний клас `container`. Для контейнерів ми прописуємо
+максимальну ширину (щоб контент не виходив за межі екрана),
+відцентровуємо по горизонталі (margin: 0 auto;)
+і додаємо бокові падінги (щоб контент 'затиснувся' між краями і
+був по центру відповідно до макету) */
+
+/*
+*якщо в маржині чи падінгі лиш дві цифри, то перша цифра
+*означає значення для верхнього і нижнього,
+*а друга - для лівого і правого
+*/
+
+/*! Хедер */
+/* * раджу отак відділяти стилі,
+* щоб простіше орієнтуватися і тобі, і іншим */
 .header {
+  /** краще не називати клас назвою елемента */
   border-bottom: 1px solid #e7e9fc;
 }
 
 .header-container {
   display: flex;
-  width: 1158px;
-  margin: 0 auto;
-  padding: 0 15px;
+  /*? width: 1158px; */
+  /*? margin: 0 auto; */
+  /*? padding: 0 15px; */
+  /* оці значення ми додали в загальний клас `container`,
+  тому тут їх не потрібно
+  (також помітили що тут значення із тих вимог, але це костильовані
+  значення які є неправильними,
+  тому я тобі й кажу не дивитись в вимоги) */
+  align-items: center;
+  justify-content: space-between;
+  /* завдяки `space-between` елементи розподіляються по краях */
+  height: 72px;
+  /* задали висоту хедера */
 }
 
 .navigation {
   display: flex;
   align-items: center;
+  justify-content: center;
+  /* флекс завжди рівняй по обох осях */
+  gap: 76px;
 }
 
 .logo {
@@ -73,8 +125,11 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
-  text-decoration: none;
-  margin-right: 76px;
+  /*? text-decoration: none; */
+  /* вже є в базі */
+  /*? margin-right: 76px; */
+  /* `.navigation` вже прописаний флексом, тому
+  замість цього пробиваючого маржина краще використати `gap` */
 }
 
 .menu {
@@ -88,11 +143,12 @@ body {
 
 .link {
   font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
   color: #2e2f42;
-  text-decoration: none;
+  /* ? font-size: 16px;
+  ? line-height: 1.5;
+  ? letter-spacing: 0.02em;
+  ? text-decoration: none;
+  /* вже додані в базу */
   padding: 24px 0;
 }
 
@@ -111,18 +167,29 @@ body {
 }
 
 .address-link {
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #434455;
-  text-decoration: none;
+  /* ? font-size: 16px;
+  ? line-height: 1.5;
+  ? letter-spacing: 0.02em;
+  ? color: #434455;
+  ? text-decoration: none;
+  /* вже додані в базу */
+  font-weight: 400;
+  /* через те що ми додали клас `link` (чит. чуть нижче),
+  потрібен `font-weight: 400;`.
+  в класі `link` стоїть `font-weight: 500;`,
+  а нам же 400 потрібно в адресі, тому нада 'перебити' */
 }
 
-.address-link:hover,
-.address-link:focus {
-  color: #404bbf;
-}
+/*
+?.address-link:hover,
+?.address-link:focus {
+?  color: #404bbf;
+?}
+/* вже є в класі `.link`, можна просто додати цей клас
+до адресів `address-link` в HTML
+( <a class="link address-link" ... ) */
 
+/*! Хіро */
 .title-section {
   background-color: #2e2f42;
   padding: 188px 0;
@@ -132,38 +199,76 @@ body {
   font-size: 56px;
   line-height: 1.07;
   text-align: center;
-  letter-spacing: 0.02em;
+  /*? letter-spacing: 0.02em; */
+  /* вже додані в базу */
   color: #ffffff;
   max-width: 496px;
+  margin: 0 auto 48px;
+  /* відцентрували і додали нижній відступ.
+  по факту тут мається на увазі `margin: 0 auto 48px auto;`,
+  але можна скоротити просто до `margin: 0 auto 48px;` */
 }
 
 .button {
   background-color: #4d5ae5;
-  font-family: "Roboto", sans-serif;
+  /*? font-family: "Roboto", sans-serif; */
   font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
+  /*? font-size: 16px; */
+  /*? line-height: 1.5; */
   letter-spacing: 0.04em;
   color: #ffffff;
-  border: none;
-  display: block;
+  /*? border: none; */
+  /*? display: block; */
   min-width: 169px;
   height: 56px;
   border-radius: 4px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  /* не вистачало тіні */
+  margin: 0 auto;
+  /* відцентрували */
 }
 
 .button:hover,
 .button:focus {
   background-color: #404bbf;
-  cursor: pointer;
+  /*? cursor: pointer; */
+}
+
+/*! Переваги */
+.advantages-list {
+  /* це контейнер для саме списку */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* завжди центруй флекс по обох осях */
+  gap: 24px; /* відступ між елементами */
+}
+
+.advantages-list-item {
+  /* це сам елемент списку */
+  flex-basis: calc((100% - 24px * 3) / 4);
+  /* Можна було б просто задати `width: 264px;`,
+  але ми підемо хитріше і одразу правильно
+  (це знадобиться при адаптації під різні екрани).
+  Ми підключаємо калькулятор, що сам порахує ширину.
+  `100%` - це 100% від ширини контейнера,
+  де цей елемент знаходиться.
+  24px * 3 - це загальна ширина відступів між елементами
+  (у нас 4 елементи, отже 3 відступи між ними).
+  Віднімаємо цю ширину від 100%.
+  Ділимо на 4, бо елементів в рядку 4.
+  Таким чином ми отримуємо ширину елемента,
+  яка зможе потім адаптуватися */
 }
 
 .list-title {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
-  letter-spacing: 0.02em;
+  /*? letter-spacing: 0.02em; */
   color: #2e2f42;
+  margin-bottom: 8px;
+  /* додали нижній відступ */
 }
 
 .paragraph {
@@ -173,6 +278,7 @@ body {
   color: #434455;
 }
 
+/*! Команда */
 .team-section {
   background-color: #f4f4fd;
 }
@@ -190,6 +296,12 @@ body {
   background-color: #ffffff;
 }
 
+/*! Портфоліо */
+/* тут тобі знадобиться
+`flex-basis` і `flex-wrap`,
+щоб елементи розподілились на 2 рядки */
+
+/*! Футер */
 .footer {
   background-color: #2e2f42;
 }

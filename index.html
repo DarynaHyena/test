@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <!-- ?
+    ? <link rel="preconnect" href="https://fonts.googleapis.com" />
+    ? <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    ? <link
+    ?  href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    ?  rel="stylesheet"
+    ? /> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,85 +21,124 @@
     <link rel="stylesheet" href="./css/styles.css" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WEDSTUDIO</title>
+    <title>WEBSTUDIO</title>
+    <!-- опечатка була, WE`D`STUDIO -->
   </head>
+
   <body>
+    <!--! Хедер -->
+    <!--* раджу отак відділяти секції, щоб простіше орієнтуватися і тобі, і іншим
+    (взагалі, було б добре писати назви на англ, але мені лєнь) -->
     <header class="header">
-      <div class="header-container">
+      <div class="container header-container">
         <nav class="navigation">
           <a class="logo" href="./index.html"
             >Web<span class="selected-logo">Studio</span></a
           >
           <ul class="menu">
+            <!-- * краще в класах спочатку писати назву контейнера,
+          * а потім назву самого елемента (якщо це унікальний, а не загальний клас)
+          * `menu`->`navigation-menu` або `header-menu`.
+          * назви можуть виходити довгими, зате будуть зрозумілішими.
+          * Також, можна ж скорочувати, наприклад `navigation`->`nav`,
+          * щоб не перевантажувати назви.
+          * Розробники рідко працюють одні, тому важливо дотримуватись синемантики
+          * можеш просто взяти до уваги на майбутнє, а можеш і зараз поперейменовувати
+          * щоб одразу звикнути -->
             <li><a class="link" href="">Studio</a></li>
 
             <li><a class="link" href="">Portfolio</a></li>
 
             <li><a class="link" href="">Contacts</a></li>
           </ul>
-          <address class="address-info">
-            <ul class="address-menu">
-              <li>
-                <a class="address-link" href="mailto:info@devstudio.com"
-                  >info@devstudio.com</a
-                >
-              </li>
-              <li>
-                <a class="address-link" href="tel:+110001111111"
-                  >+11 (000) 111-11-11</a
-                >
-              </li>
-            </ul>
-          </address>
         </nav>
+        <!-- `<address>` і `<nav>` повинні бути на одному рівні, окремо, а не один в одному
+        (Це може якраз і бути причиною, чому не виходило з хедером) -->
+        <address class="address-info">
+          <ul class="address-menu">
+            <li>
+              <a class="link address-link" href="mailto:info@devstudio.com"
+                >info@devstudio.com</a
+              >
+              <!-- додали клас `link` -->
+            </li>
+            <li>
+              <a class="link address-link" href="tel:+110001111111"
+                >+11 (000) 111-11-11</a
+              >
+              <!-- додали клас `link` -->
+            </li>
+          </ul>
+        </address>
       </div>
     </header>
 
     <main>
-      <section class="title-section">
+      <!--! Хіро -->
+      <section class="section title-section">
+        <!-- додали загальний клас `section`
+        (здебільшого він тут заради прілічія, адже в хіро
+        завжди падінги відрізняються від інших блоків,
+        і треба буде переписати на ті які в макеті
+        юзаючи унікальний клас `title-section`) -->
         <div class="container">
           <h1 class="title">Effective Solutions for Your Business</h1>
           <button class="button" type="button">Order Service</button>
         </div>
       </section>
 
-      <section>
-        <h2>Advantages</h2>
-        <ul>
-          <li>
-            <h3 class="list-title">Strategy</h3>
-            <p class="paragraph">
-              Our goal is to identify the business problem to walk away with the
-              perfect and creative solution.
-            </p>
-          </li>
+      <!--! Переваги -->
+      <section class="section">
+        <!-- додали загальний клас `section` -->
+        <div class="container">
+          <!-- обгорнули в дів. Додали загальний клас -->
+          <!-- * щоб зробити це легко, просто виділяєш все що треба вкласти в `div`
+          * і натискаєш Alt+W. Змінюєш `p` на `div` і запевнись що закриваючий тег
+          * також змінено -->
+          <h2 class="visually-hidden">Advantages</h2>
+          <!-- клас `visually-hidden` приховає заголовок секції -->
+          <ul class="advantages-list">
+            <!-- додали клас -->
+            <li class="advantages-list-item">
+              <!-- додали клас -->
+              <h3 class="list-title">Strategy</h3>
+              <p class="paragraph">
+                Our goal is to identify the business problem to walk away with
+                the perfect and creative solution.
+              </p>
+            </li>
 
-          <li>
-            <h3 class="list-title">Punctuality</h3>
-            <p class="paragraph">
-              Bring the key message to the brand's audience for the best price
-              within the shortest possible time.
-            </p>
-          </li>
+            <li class="advantages-list-item">
+              <!-- додали клас -->
+              <h3 class="list-title">Punctuality</h3>
+              <p class="paragraph">
+                Bring the key message to the brand's audience for the best price
+                within the shortest possible time.
+              </p>
+            </li>
 
-          <li>
-            <h3 class="list-title">Diligence</h3>
-            <p class="paragraph">
-              Research and confirm brands with the strongest digital growth
-              opportunities and minimize risk.
-            </p>
-          </li>
+            <li class="advantages-list-item">
+              <!-- додали клас -->
+              <h3 class="list-title">Diligence</h3>
+              <p class="paragraph">
+                Research and confirm brands with the strongest digital growth
+                opportunities and minimize risk.
+              </p>
+            </li>
 
-          <li>
-            <h3 class="list-title">Technologies</h3>
-            <p class="paragraph">
-              Design practice focused on digital experiences. We bring forth a
-              deep passion for problem-solving.
-            </p>
-          </li>
-        </ul>
+            <li class="advantages-list-item">
+              <!-- додали клас -->
+              <h3 class="list-title">Technologies</h3>
+              <p class="paragraph">
+                Design practice focused on digital experiences. We bring forth a
+                deep passion for problem-solving.
+              </p>
+            </li>
+          </ul>
+        </div>
       </section>
 
+      <!--! Команда -->
       <section class="team-section">
         <h2 class="page-title">Our Team</h2>
         <ul>
@@ -148,6 +188,7 @@
         </ul>
       </section>
 
+      <!--! Портфоліо -->
       <section>
         <h2 class="page-title">Our Portfolio</h2>
         <ul>
@@ -190,6 +231,7 @@
       </section>
     </main>
 
+    <!--! Футер -->
     <footer class="footer">
       <a class="logo" href="./index.html"
         >Web<span class="footer-logo">Studio</span></a
