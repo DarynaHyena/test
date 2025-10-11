@@ -30,6 +30,16 @@ img {
   height: auto;
 }
 
+.section {
+  padding: 120px 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 156px;
+}
+
 .visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -133,6 +143,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 48px;
 }
 
 .title {
