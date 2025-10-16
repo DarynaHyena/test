@@ -216,6 +216,19 @@ body {
   border-radius: 10px;
 }
 
+portfolio-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+portfolio-item {
+  flex-basis: calc((100% -24px * 5) / 6);
+}
+
 .footer {
   background-color: #2e2f42;
 }
@@ -225,7 +238,5 @@ body {
 }
 
 .footer-par {
-  line-height: 1.5;
   color: #f4f4fd;
-  letter-spacing: 0.02em;
 }
